@@ -1,6 +1,27 @@
+#####################COMENTARIO - CODIGO #################
+
+#terraform {: Inicia a definição da configuração do Terraform. Todas as configurações do Terraform
+#estão contidas dentro deste bloco.
+
+#required_version = ">= 1.1.0": Define a versão mínima do Terraform necessária para executar este código.
+#Neste caso, o código requer a versão 1.1.0 ou superior do Terraform para garantir que as funcionalidades 
+#e sintaxes utilizadas estejam disponíveis.
+
+#required_providers {: Inicia a definição dos provedores (providers) necessários para este projeto.
+#No contexto do Terraform, um provedor é um plugin que permite a interação com um provedor de nuvem específico,#
+#como AWS, Azure, Google Cloud, etc.
+
+#aws = ">= 4.0": Define a versão mínima do provedor AWS necessária para este projeto. Aqui, o código requer
+#a versão 4.0 ou superior do provedor AWS para garantir que as funcionalidades utilizadas estejam disponíveis.
+
+#}: Encerra a definição dos provedores necessários.
+
+########################CODIGO#####################
 terraform {
     required_version = ">= 1.1.0"
     required_providers {
         aws = ">= 4.0"
     }
 }
+
+
