@@ -25,3 +25,17 @@ terraform {
 }
 
 
+#####################COMENTARIO - Provider #################
+# Este bloco define o provedor AWS para o Terraform, indicando que este código provisionará recursos na AWS.
+# O perfil AWS a ser utilizado. Pode ser configurado com credenciais no arquivo de configuração 
+# AWS (~/.aws/credentials).
+# O caminho para o arquivo de credenciais compartilhadas. Neste caso, aponta para o arquivo padrão
+# (~/.aws/credentials).
+# A região AWS onde os recursos serão provisionados. No exemplo, os recursos serão criados na região us-east-1.
+
+########################CODIGO#####################
+provider "aws" {
+  profile                  = "default"
+  shared_credentials_files = ["~/.aws/credentials"]
+  region                   = "us-east-1"
+}
