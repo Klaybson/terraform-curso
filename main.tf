@@ -22,6 +22,12 @@ terraform {
   required_providers {
     aws = ">= 4.0"
   }
+
+  backend "s3" {
+    bucket = "klaybsonoc"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 
@@ -72,7 +78,7 @@ resource "aws_instance" "web" {
 ###### nova instancia ###########
 resource "aws_instance" "web2" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = "t3.nano"
 
   tags = {
     Name = "HelloWorld2"
