@@ -22,7 +22,7 @@ terraform {
   required_providers {
     aws = ">= 4.0"
   }
-
+####Salvado o terraform.tfstate no S3 #####
   backend "s3" {
     bucket = "klaybsonoc"
     key    = "terraform.tfstate"
