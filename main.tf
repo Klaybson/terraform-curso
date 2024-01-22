@@ -70,7 +70,7 @@ resource "aws_instance" "web" {
   instance_type = var.so
   disable_api_termination = true 
   tags = {
-    Name = "HelloWorld"
+    Name = var.int_name [0]
   }
 }
 
@@ -81,6 +81,6 @@ resource "aws_instance" "web2" {
   instance_type = "t3.nano"
 
   tags = {
-    Name = "HelloWorld2"
+    Name = var.int_name [1]
   }
 }
