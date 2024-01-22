@@ -1,3 +1,9 @@
+variable "region" {
+    default = "us-east-1"
+  
+}
+
+
 variable "int_type" {
     default = "t3.micro"
 }
@@ -17,4 +23,14 @@ variable "int_name" {
     type = list(string)
     default = [ "Hellowolrd","Hellowolrd2","Helloword3"]
 
+}
+
+variable "amis" {
+    description = "amis para determinar SO por regioes"
+    type = map(any)
+    default = {
+        "us-east-1" = "ami-05fa00d4c63e32376"
+        "us-east-2" = "ami-0568773882d492fc8"
+    }
+  
 }

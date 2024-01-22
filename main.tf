@@ -43,7 +43,7 @@ terraform {
 provider "aws" {
   profile                  = "default"
   shared_credentials_files = ["~/.aws/credentials"]
-  region                   = "us-east-1"
+  region                   = var.region 
 }
 
 ##Exemplo basico
@@ -82,5 +82,15 @@ resource "aws_instance" "web2" {
 
   tags = {
     Name = var.int_name [1]
+  }
+}
+
+###### nova instancia 2 ###########
+resource "aws_instance" "web3" {
+  ami           = var.amis[var.region]
+  instance_type = "t3.nano"
+
+  tags = {
+    Name = var.int_name [2]
   }
 }
