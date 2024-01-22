@@ -5,7 +5,3 @@ variable "so" {
     default = "t3.micro"
 }
 
-variable "Var-bool" {
-    
-  
-}
