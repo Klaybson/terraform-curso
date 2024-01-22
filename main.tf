@@ -86,6 +86,7 @@ resource "aws_instance" "web2" {
 }
 
 ###### nova instancia 2 ###########
+#Crie o diretório e o scrpts.sh como no parametro user_data
 resource "aws_instance" "web3" {
   ami           = var.amis[var.region]
   instance_type = "t3.nano"
