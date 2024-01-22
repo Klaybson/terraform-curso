@@ -68,7 +68,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.so
-
+  disable_api_termination = true 
   tags = {
     Name = "HelloWorld"
   }

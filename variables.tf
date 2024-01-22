@@ -4,3 +4,8 @@ variable "int_type" {
 variable "so" {
     default = "t3.micro"
 }
+
+variable "Var-bool" {
+    
+  
+}
