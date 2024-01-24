@@ -78,6 +78,6 @@ resource "aws_instance" "web" {
   instance_type = each.value
   user_data = file("./files/userdata.sh")
   tags = {
-    Name = each.key
+    Name = var.int_name [count.index]
   }
 }
