@@ -69,9 +69,13 @@ data "aws_ami" "ubuntu" {
 ###### nova instancia 2 ###########
 #Crie o diretório e o scrpts.sh como no parametro user_data e criandon um loog em count 
 resource "aws_instance" "web" {
-  for_each = toset(var.int_name)
+  for_each = {
+    Hellowolrd = "t3.nano"
+    Hellowolrd2 = "t3.micro"
+    Hellowolrd3 = "t3.small"
+  }
   ami           = var.amis[var.region]
-  instance_type = "t3.nano"
+  instance_type = each.value
   user_data = file("./files/userdata.sh")
   tags = {
     Name = each.key
