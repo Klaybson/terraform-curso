@@ -67,9 +67,13 @@ data "aws_ami" "ubuntu" {
 
 
 ###### nova instancia 2 ###########
+<<<<<<< HEAD
 #Crie o diretório e o scrpts.sh como no parametro user_data e criandon um loog em count 
 resource "aws_instance" "web" {
   for_each = toset(var.int_name)
+=======
+resource "aws_instance" "web3" {
+>>>>>>> parent of 13ae950 (EC2 userdata - para executar scripts)
   ami           = var.amis[var.region]
   instance_type = each.value
   user_data = file("./files/userdata.sh")
