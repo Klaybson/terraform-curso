@@ -74,6 +74,6 @@ resource "aws_instance" "web" {
   instance_type = "t3.nano"
   user_data = file("./files/userdata.sh")
   tags = {
-    Name = var.int_name [2]
+    Name = var.int_name [count.index]
   }
 }
