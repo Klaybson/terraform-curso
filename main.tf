@@ -79,7 +79,11 @@ resource "aws_instance" "web3" {
   instance_type = each.value
   user_data = file("./files/userdata.sh")
   tags = {
+<<<<<<< HEAD
     Name = var.int_name [2]
+=======
+    Name = each.key
+>>>>>>> parent of 1d517c9 (Revert "loop para alterar nome utilizando a lista")
   }
 }
 =======
