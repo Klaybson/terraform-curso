@@ -79,7 +79,7 @@ resource "aws_instance" "web3" {
   instance_type = each.value
   user_data = file("./files/userdata.sh")
   tags = {
-    Name = var.int_name [count.index]
+    Name = var.int_name [2]
   }
 }
 =======
