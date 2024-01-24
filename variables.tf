@@ -1,9 +1,3 @@
-variable "region" {
-    default = "us-east-1"
-  
-}
-
-
 variable "int_type" {
     default = "t3.micro"
 }
@@ -25,6 +19,7 @@ variable "int_name" {
     type = list(string)
     default = [ "Hellowolrd","Hellowolrd2","Helloword3"]
 
+<<<<<<< HEAD
 }
 
 #map
@@ -36,4 +31,6 @@ variable "amis" {
         "us-east-2" = "ami-0568773882d492fc8"
     }
   
+=======
+>>>>>>> parent of d1314ae (utilando variavel data)
 }

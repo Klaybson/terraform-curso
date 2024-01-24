@@ -43,7 +43,7 @@ terraform {
 provider "aws" {
   profile                  = "default"
   shared_credentials_files = ["~/.aws/credentials"]
-  region                   = var.region 
+  region                   = "us-east-1"
 }
 
 ##Exemplo basico
@@ -66,6 +66,7 @@ data "aws_ami" "ubuntu" {
 
 
 
+<<<<<<< HEAD
 ###### nova instancia 2 ###########
 <<<<<<< HEAD
 #Crie o diretório e o scrpts.sh como no parametro user_data e criandon um loog em count 
@@ -81,3 +82,14 @@ resource "aws_instance" "web3" {
     Name = var.int_name [count.index]
   }
 }
+=======
+###### nova instancia ###########
+resource "aws_instance" "web2" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.nano"
+
+  tags = {
+    Name = var.int_name [1]
+  }
+}
+>>>>>>> parent of d1314ae (utilando variavel data)
