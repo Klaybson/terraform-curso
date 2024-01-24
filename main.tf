@@ -64,30 +64,12 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-#### Criação da instancia
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = var.so
-  disable_api_termination = true 
-  tags = {
-    Name = var.int_name [0]
-  }
-}
 
-
-###### nova instancia ###########
-resource "aws_instance" "web2" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.nano"
-
-  tags = {
-    Name = var.int_name [1]
-  }
-}
 
 ###### nova instancia 2 ###########
-#Crie o diretório e o scrpts.sh como no parametro user_data
-resource "aws_instance" "web3" {
+#Crie o diretório e o scrpts.sh como no parametro user_data e criandon um loog em count 
+resource "aws_instance" "web" {
+  count = 3
   ami           = var.amis[var.region]
   instance_type = "t3.nano"
   user_data = file("./files/userdata.sh")

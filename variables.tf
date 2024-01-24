@@ -18,6 +18,8 @@ variable "disable_api_termination" {
     default = false
 }*/
 
+
+#Lista
 variable "int_name" {
     description = "Lista de nome para instancias"
     type = list(string)
@@ -25,6 +27,7 @@ variable "int_name" {
 
 }
 
+#map
 variable "amis" {
     description = "amis para determinar SO por regioes"
     type = map(any)
